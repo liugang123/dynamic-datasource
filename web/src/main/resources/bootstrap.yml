@@ -5,23 +5,26 @@ server:
 # 数据源
 spring:
   datasource:
-    url: jdbc:mysql://172.26.130.75:4000/roc?useSSL=false
+    url: jdbc:mysql://xxxxxx:xxxxx/xxxx?useSSL=false
     driver-class-name: com.mysql.jdbc.Driver
-    username: yn_usr
-    password: seal_admin
+    username: xxxxxx
+    password: xxxxxx
 
 mybatis:
   mapper-locations: classpath:com/example/dao/**.xml
 
-# 请求上下文
+# 请求上下文、动态数据源
 com:
   example:
     filter:
       basicRequestContextFilter:
         enable: true
+    dynamic:
+      datasource:
 
 
-# 动态数据源
+
+
 
 
 
