@@ -30,7 +30,7 @@ public class DynamicDataSourceAutoConfiguration {
 
     @Bean
     public DynamicDataSourceProvier dynamicDataSourceProvier(DynamicDataSourceProperties properties) {
-        return new YmlDynamicDataSourceProvider(properties.getDataSource());
+        return new YmlDynamicDataSourceProvider(properties.getDatasource());
     }
 
     @Bean

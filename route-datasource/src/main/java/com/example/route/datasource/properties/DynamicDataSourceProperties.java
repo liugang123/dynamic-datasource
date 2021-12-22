@@ -15,11 +15,11 @@ import java.util.Map;
 @Data
 public class DynamicDataSourceProperties {
 
-    public static final String PREFIX = "com.example.dynamic.datasource";
+    public static final String PREFIX = "com.example.dynamic";
 
     private Boolean enable;
 
-    private Map<String, DataSourceProperty> dataSource;
+    private Map<String, DataSourceProperty> datasource;
 
     /**
      * 数据源信息

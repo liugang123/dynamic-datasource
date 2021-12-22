@@ -17,6 +17,7 @@ public class BasicRequestContext {
     public static final String REQUEST_PLATFORM = "platform";
     public static final String REQUEST_VERSION = "version";
     public static final String REQUEST_DEVICE = "device";
+    public static final String REQUEST_DATA_SOURCE = "datasource";
 
     private static ThreadLocal<Map<String, Object>> paramsThreadLocal = new TransmittableThreadLocal();
 
@@ -74,6 +75,19 @@ public class BasicRequestContext {
      */
     public static String platform() {
         Object platform = paramsMap().get(REQUEST_PLATFORM);
+        if (Objects.nonNull(platform)) {
+            return String.valueOf(platform);
+        }
+        return null;
+    }
+
+    /**
+     * 数据源
+     *
+     * @return
+     */
+    public static String datasource() {
+        Object platform = paramsMap().get(REQUEST_DATA_SOURCE);
         if (Objects.nonNull(platform)) {
             return String.valueOf(platform);
         }

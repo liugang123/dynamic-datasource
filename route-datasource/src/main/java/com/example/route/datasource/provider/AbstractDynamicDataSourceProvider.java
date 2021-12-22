@@ -4,7 +4,6 @@ import com.example.route.datasource.provider.creator.DataSourceCreator;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
-import java.util.Objects;
 
 
 /**
@@ -25,7 +24,7 @@ public abstract class AbstractDynamicDataSourceProvider implements DynamicDataSo
      * @return
      */
     public DataSourceCreator getDataSourceCreator(String key) {
-        return dataSourceCreatorList.stream().filter(f -> Objects.equals(f.dataSourceType().getName(), key)).findFirst().orElse(null);
+        //return dataSourceCreatorList.stream().filter(f -> Objects.equals(f.dataSourceType().getName(), key)).findFirst().orElse(null);
+        return dataSourceCreatorList.get(0);
     }
-
 }

@@ -30,7 +30,8 @@ public class YmlDynamicDataSourceProvider extends AbstractDynamicDataSourceProvi
         Map<String, DataSource> dataSourceMap = new HashMap<>();
         // 根据不同的数据库创建不同的数据源
         dataSourceConfig.forEach((key, value) -> {
-            super.getDataSourceCreator(key).createDataSource(value);
+            DataSource dataSource = super.getDataSourceCreator(key).createDataSource(value);
+            dataSourceMap.put(key, dataSource);
         });
 
         return dataSourceMap;

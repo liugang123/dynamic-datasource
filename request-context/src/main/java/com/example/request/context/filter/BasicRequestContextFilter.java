@@ -31,6 +31,7 @@ public class BasicRequestContextFilter implements Filter {
         BasicRequestContext.set(BasicRequestContext.REQUEST_VERSION, request.getHeader(BasicRequestContext.REQUEST_VERSION));
         BasicRequestContext.set(BasicRequestContext.REQUEST_PLATFORM, request.getHeader(BasicRequestContext.REQUEST_PLATFORM));
         BasicRequestContext.set(BasicRequestContext.REQUEST_DEVICE, request.getHeader(BasicRequestContext.REQUEST_DEVICE));
+        BasicRequestContext.set(BasicRequestContext.REQUEST_DATA_SOURCE, request.getHeader(BasicRequestContext.REQUEST_DATA_SOURCE));
 
         // 放行拦截
         try {

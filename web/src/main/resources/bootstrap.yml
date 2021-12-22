@@ -3,29 +3,26 @@ server:
   port: 10002
 
 # 数据源
-spring:
-  datasource:
-    url: jdbc:mysql://xxxxxx:xxxxx/xxxx?useSSL=false
-    driver-class-name: com.mysql.jdbc.Driver
-    username: xxxxxx
-    password: xxxxxx
-
 mybatis:
   mapper-locations: classpath:com/example/dao/**.xml
 
-# 请求上下文、动态数据源
+# 请求上下文
 com:
   example:
     filter:
       basicRequestContextFilter:
         enable: true
+    # 动态数据源
     dynamic:
+      enable: true
       datasource:
-
-
-
-
-
-
-
-
+        master:
+          url: jdbc:mysql://xxxxxxxxxxx:xxxx/xxxx?useSSL=false
+          driver-class-name: com.mysql.jdbc.Driver
+          username: xxxx
+          password: xxxx
+        slave:
+          url: jdbc:mysql://xxxxxxxxxxx:xxxx/xxxx?useSSL=false
+          driver-class-name: com.mysql.jdbc.Driver
+          username: xxxx
+          password: xxxx

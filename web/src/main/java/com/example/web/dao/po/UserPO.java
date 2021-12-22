@@ -15,5 +15,7 @@ public class UserPO {
 
     private Integer status;
 
+    private String nickName;
+
     private Date createTime;
 }
