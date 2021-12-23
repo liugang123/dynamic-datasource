@@ -19,7 +19,10 @@ public class DynamicDataSourceProperties {
 
     private Boolean enable;
 
+    private Aop aop;
+
     private Map<String, DataSourceProperty> datasource;
+
 
     /**
      * 数据源信息
@@ -36,4 +39,8 @@ public class DynamicDataSourceProperties {
         private String driverClassName;
     }
 
+    @Data
+    public static class Aop {
+
+    }
 }

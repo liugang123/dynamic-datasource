@@ -37,4 +37,5 @@ public class DemoServiceImpl implements DemoService {
         log.info("device:{},platform:{},version:{}", device, platform, version);
         return param;
     }
+
 }

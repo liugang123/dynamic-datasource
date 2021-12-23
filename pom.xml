@@ -80,6 +80,12 @@
 
             <dependency>
                 <groupId>org.springframework</groupId>
+                <artifactId>spring-aspects</artifactId>
+                <version>5.1.2.RELEASE</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework</groupId>
                 <artifactId>spring-jdbc</artifactId>
                 <version>${spring.jdbc.version}</version>
             </dependency>
@@ -101,7 +107,6 @@
                 <artifactId>mysql-connector-java</artifactId>
                 <version>5.1.49</version>
             </dependency>
-
 
             <dependency>
                 <groupId>com.alibaba</groupId>

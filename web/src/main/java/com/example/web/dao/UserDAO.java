@@ -1,5 +1,6 @@
 package com.example.web.dao;
 
+import com.example.route.datasource.annotation.DataSource;
 import com.example.web.dao.po.UserPO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Result;
@@ -17,5 +18,6 @@ public interface UserDAO {
     @Results({
             @Result(property = "nickName", column = "nick_name")
     })
+    @DataSource(name = "master")
     UserPO getUserById(String id);
 }

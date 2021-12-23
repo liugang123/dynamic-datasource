@@ -1,9 +1,12 @@
 package com.example.route.datasource.configuration;
 
 import com.example.route.datasource.DynamicRoutingDataSource;
+import com.example.route.datasource.aop.DynamicDataSourceAnnotationAdvisor;
+import com.example.route.datasource.aop.DynamicDataSourceAnnotationInterceptor;
 import com.example.route.datasource.properties.DynamicDataSourceProperties;
 import com.example.route.datasource.provider.DynamicDataSourceProvier;
 import com.example.route.datasource.provider.YmlDynamicDataSourceProvider;
+import org.springframework.aop.Advisor;
 import org.springframework.boot.autoconfigure.AutoConfigureBefore;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -37,6 +40,13 @@ public class DynamicDataSourceAutoConfiguration {
     @ConditionalOnMissingBean
     public DataSource dataSource(DynamicDataSourceProvier dataSourceProvier) {
         return new DynamicRoutingDataSource(dataSourceProvier.loadDataSources());
+    }
+
+    @Bean
+    @ConditionalOnProperty(prefix = DynamicDataSourceProperties.PREFIX + ".aop", name = "enable", havingValue = "true")
+    public Advisor dynamicDataSourceAnnotationAdvisor() {
+        DynamicDataSourceAnnotationInterceptor interceptor = new DynamicDataSourceAnnotationInterceptor();
+        return new DynamicDataSourceAnnotationAdvisor(interceptor);
     }
 
 }
